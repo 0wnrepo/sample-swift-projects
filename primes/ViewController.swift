@@ -18,14 +18,25 @@ class ViewController: UIViewController {
     }
 
     @IBAction func isPrimeButtonAction(_ sender: Any) {
-        let numberString = textView.text
-
-        checkIfPrimeFromWithString(input: numberString!) {
-            (result: String) in
-            print("got back: \(result)",
-            statusLabel.text = result)
+        let stringNumber = textView.text
+    
+        if isValidPositiveNumber(number: stringNumber!) {
+            checkIfPrimeFromWithString(input: stringNumber!) {
+                (result: String) in
+                print("got back: \(result)",
+                    statusLabel.text = result)
+            }
+        } else {
+            statusLabel.text = "Input not valid, please edit and check again!"
         }
-        
+    }
+    
+    func isValidPositiveNumber(number : String) -> Bool {
+        let n = NumberFormatter().number(from: number)
+        let a = n != nil ? true : false //valid number?
+        let b = (n?.intValue)! < Int.max ? true : false //smaller than max int?
+        let c = (n?.intValue)! > 0 ? true : false //positive?
+        return a && b && c;
     }
     
     func checkIfPrimeFromWithString(input: String, completion: (_ result: String) -> Void) {
