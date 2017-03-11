@@ -95,7 +95,6 @@ class ViewController: UIViewController, LoginButtonDelegate {
             } else {
                 print("error \(error)")
             }
-            
         })
     }
     
@@ -106,7 +105,7 @@ class ViewController: UIViewController, LoginButtonDelegate {
             if error == nil {
                 print("\(result)")
                 let resultDic : [NSString : Any] = result as! [NSString : Any]
-                //just an example, not for production.
+                //just an example, not for production need a better way of parsing json to a model
                 guard let dataDic = resultDic["data"] as? [NSString : Any] else {
                     print("is nil")
                     completionHandler(nil,NSError.init(domain: "meh", code: 0, userInfo: ["index" : "help"]))

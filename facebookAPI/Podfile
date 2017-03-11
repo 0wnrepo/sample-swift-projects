@@ -10,4 +10,7 @@ target 'facebookAPI' do
   pod 'FacebookLogin'
   pod 'FacebookShare'
 
+  # Pod for JSON serialization / deserilization
+  pod 'JSONModel'
+
 end
