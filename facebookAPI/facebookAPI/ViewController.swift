@@ -9,7 +9,7 @@
 import UIKit
 import FacebookLogin
 import Alamofire
-
+import CoreData
 
 class ViewController: UIViewController, LoginButtonDelegate {
     @IBOutlet weak var imageView: UIImageView!
@@ -130,6 +130,27 @@ class ViewController: UIViewController, LoginButtonDelegate {
             print(response?.suggestedFilename ?? url.lastPathComponent)
             print("Download Finished")
             DispatchQueue.main.async() { () -> Void in
+                let context = self.getContext()
+                //let fb = FBProfile(context: context) // Link Task & Context
+                
+                //retrieve the entity that we just created
+                let entity =  NSEntityDescription.entity(forEntityName: "FBProfile", in: context)
+                
+                let transc = NSManagedObject(entity: entity!, insertInto: context)
+                
+                //set the entity values
+                transc.setValue(data, forKey: "picture_data")
+                transc.setValue(1, forKey: "id")
+
+                // Save the data to coredata
+                do {
+                    try context.save()
+                    print("saved!")
+                } catch let error as NSError  {
+                    print("Could not save \(error), \(error.userInfo)")
+                } catch {
+                    
+                }
                 self.imageView.image = UIImage(data: data)
             }
         }
@@ -140,5 +161,11 @@ class ViewController: UIViewController, LoginButtonDelegate {
             (data, response, error) in
             completion(data, response, error)
             }.resume()
+    }
+    
+    //------data
+    func getContext () -> NSManagedObjectContext {
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        return appDelegate.persistentContainer.viewContext
     }
 }
