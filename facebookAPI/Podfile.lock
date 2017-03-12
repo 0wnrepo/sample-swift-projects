@@ -1,4 +1,5 @@
 PODS:
+  - Alamofire (4.4.0)
   - Bolts (1.8.4):
     - Bolts/AppLinks (= 1.8.4)
     - Bolts/Tasks (= 1.8.4)
@@ -25,14 +26,18 @@ PODS:
   - FBSDKShareKit (4.20.0):
     - FBSDKCoreKit
   - JSONModel (1.7.0)
+  - SwiftyJSON (3.1.4)
 
 DEPENDENCIES:
+  - Alamofire (~> 4.4)
   - FacebookCore
   - FacebookLogin
   - FacebookShare
   - JSONModel
+  - SwiftyJSON
 
 SPEC CHECKSUMS:
+  Alamofire: dc44b1600b800eb63da6a19039a0083d62a6a62d
   Bolts: 8a7995239dbe724f9cba2248b766d48b7ebdd322
   FacebookCore: 2cb3f0fbff218e9d3119cec84bae983b232412de
   FacebookLogin: c9d606504735780a9e3002465a615512e0a691a5
@@ -41,7 +46,8 @@ SPEC CHECKSUMS:
   FBSDKLoginKit: a9d9391506c687e2304a590bf9312837fce7f375
   FBSDKShareKit: 1b91af62a603d67f392bc7fde63bc4a0705dde31
   JSONModel: 840bc0fcffb24b8454d2c026bf26fea454b8e98d
+  SwiftyJSON: c2842d878f95482ffceec5709abc3d05680c0220
 
-PODFILE CHECKSUM: a711235f8eba109db207c466bd33f8ade71e2965
+PODFILE CHECKSUM: bd63e6613ed197cc767631eeb2fc655d97d73dec
 
 COCOAPODS: 1.2.0

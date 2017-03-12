@@ -13,4 +13,10 @@ target 'facebookAPI' do
   # Pod for JSON serialization / deserilization
   pod 'JSONModel'
 
+  # Swift 3.0 pod for JSON serialization / deserialization
+  pod 'SwiftyJSON'
+
+  #AFNetworking reloaded in swift
+  pod 'Alamofire', '~> 4.4'
+
 end

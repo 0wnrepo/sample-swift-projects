@@ -8,6 +8,7 @@
 
 import UIKit
 import FacebookLogin
+import Alamofire
 
 
 class ViewController: UIViewController, LoginButtonDelegate {
