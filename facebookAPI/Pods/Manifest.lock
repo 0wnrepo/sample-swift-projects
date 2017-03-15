@@ -26,6 +26,9 @@ PODS:
   - FBSDKShareKit (4.20.0):
     - FBSDKCoreKit
   - ObjectMapper (2.2.5)
+  - Result (3.2.1)
+  - SugarRecord/CoreData (3.0.0):
+    - Result (~> 3.0)
 
 DEPENDENCIES:
   - Alamofire (~> 4.4)
@@ -33,6 +36,7 @@ DEPENDENCIES:
   - FacebookLogin
   - FacebookShare
   - ObjectMapper (~> 2.2)
+  - SugarRecord/CoreData
 
 SPEC CHECKSUMS:
   Alamofire: dc44b1600b800eb63da6a19039a0083d62a6a62d
@@ -44,7 +48,9 @@ SPEC CHECKSUMS:
   FBSDKLoginKit: a9d9391506c687e2304a590bf9312837fce7f375
   FBSDKShareKit: 1b91af62a603d67f392bc7fde63bc4a0705dde31
   ObjectMapper: fb30f71e08470d1e5a20b199fafe1246281db898
+  Result: 2453a22e5c5b11c0c3a478736e82cd02f763b781
+  SugarRecord: c17d4a17b257cac4c4355b2790685b1e49b32de3
 
-PODFILE CHECKSUM: 4de6ccff94a7bae07d1f999aaad0d75a2afeda25
+PODFILE CHECKSUM: 577ddb1407a67cb349df44691abf59b48aca7dc1
 
 COCOAPODS: 1.2.0

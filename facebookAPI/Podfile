@@ -25,4 +25,7 @@ target 'facebookAPI' do
   #Alamofire + ObjectMapper
   #pod 'AlamofireObjectMapper', '~> 4.0'
 
+  #Coredata helper - SugarRecord
+  pod "SugarRecord/CoreData"
+
 end
