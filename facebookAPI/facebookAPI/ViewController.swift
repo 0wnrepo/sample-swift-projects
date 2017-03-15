@@ -30,6 +30,11 @@ class ViewController: UIViewController, LoginButtonDelegate {
             self.returnUserData()
             self.getProfilePicture()
             
+            //Alamofire networking + OBjectMapper JSON mapping to plain old SWift Object Model
+            let nm = NetworkingManager.sharedInstance
+            nm.OMTest(completion: { (profile) in
+                print("parsed JSON data - user e-mail: \(profile?.email)")
+            })
         } else {
             let loginButton = LoginButton(readPermissions: [ .publicProfile, .email, .userFriends ])
             loginButton.center = view.center
@@ -86,86 +91,74 @@ class ViewController: UIViewController, LoginButtonDelegate {
     }
     
     func getProfilePicture() {
-        self.profilePictureRequest(completionHandler: {(url, error) -> Void in
+        let nm = NetworkingManager.sharedInstance
+        nm.profilePictureRequest(completionHandler: {(url, error) -> Void in
             if (error == nil) {
                 print("url: \(url)")
                 if (url != nil) {
-                    self.imageView.contentMode = .scaleAspectFit
-                    self.downloadImage(url: url as! URL)
+                    nm.getRawProfilePictureData(url: url as! URL, completion: { (data) in
+                        self.savePictureData(data: data!)
+                    })
+                    self.getPictureData(completion: { (data) in
+                        self.imageView.contentMode = .scaleAspectFit
+                        self.imageView.image = UIImage(data: data!)
+                    })
+                    
                 }
             } else {
                 print("error \(error)")
             }
         })
     }
-    
-    func profilePictureRequest(completionHandler:@escaping (NSURL?, NSError?) -> ()) {
-        let pictureRequest : FBSDKGraphRequest = FBSDKGraphRequest(graphPath: "me/picture?type=large&redirect=false", parameters: nil)
-        pictureRequest.start(completionHandler: { (connection, result, error) -> Void in
         
-            if error == nil {
-                print("\(result)")
-                let resultDic : [NSString : Any] = result as! [NSString : Any]
-                //just an example, not for production need a better way of parsing json to a model
-                guard let dataDic = resultDic["data"] as? [NSString : Any] else {
-                    print("is nil")
-                    completionHandler(nil,NSError.init(domain: "meh", code: 0, userInfo: ["index" : "help"]))
-                    return
-                }
-                let resultURLString = dataDic["url"] as? NSString
-                let resultURL : NSURL = NSURL(string: resultURLString as! String)!
-                
-                completionHandler(resultURL,error as? NSError)
-            } else {
-                print("\(error)")
-                completionHandler (nil, error as? NSError)
-            }
-        })
-    }
-    
-    func downloadImage(url: URL) {
-        print("Download Started")
-        getDataFromUrl(url: url) { (data, response, error)  in
-            guard let data = data, error == nil else { return }
-            print(response?.suggestedFilename ?? url.lastPathComponent)
-            print("Download Finished")
-            DispatchQueue.main.async() { () -> Void in
-                let context = self.getContext()
-                //let fb = FBProfile(context: context) // Link Task & Context
-                
-                //retrieve the entity that we just created
-                let entity =  NSEntityDescription.entity(forEntityName: "FBProfile", in: context)
-                
-                let transc = NSManagedObject(entity: entity!, insertInto: context)
-                
-                //set the entity values
-                transc.setValue(data, forKey: "picture_data")
-                transc.setValue(1, forKey: "id")
-
-                // Save the data to coredata
-                do {
-                    try context.save()
-                    print("saved!")
-                } catch let error as NSError  {
-                    print("Could not save \(error), \(error.userInfo)")
-                } catch {
-                    
-                }
-                self.imageView.image = UIImage(data: data)
-            }
-        }
-    }
-
-    func getDataFromUrl(url: URL, completion: @escaping (_ data: Data?, _  response: URLResponse?, _ error: Error?) -> Void) {
-        URLSession.shared.dataTask(with: url) {
-            (data, response, error) in
-            completion(data, response, error)
-            }.resume()
-    }
-    
     //------data
     func getContext () -> NSManagedObjectContext {
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         return appDelegate.persistentContainer.viewContext
+    }
+    
+    func savePictureData(data: Data) {
+        let context = self.getContext()
+        
+        //retrieve the entity that we just created
+        let entity =  NSEntityDescription.entity(forEntityName: "FBProfile", in: context)
+        
+        let transc = NSManagedObject(entity: entity!, insertInto: context)
+        
+        //set the entity values
+        transc.setValue(data, forKey: "picture_data")
+        transc.setValue(1, forKey: "id")
+        
+        // Save the data to coredata
+        do {
+            try context.save()
+            print("saved!")
+        } catch let error as NSError  {
+            print("Could not save \(error), \(error.userInfo)")
+        } catch {
+            
+        }
+    }
+    
+    func getPictureData (completion: @escaping (_ data: Data?) -> Void) {
+        //create a fetch request, telling it about the entity
+        let fetchRequest: NSFetchRequest<FBProfile> = FBProfile.fetchRequest()
+        
+        do {
+            //go get the results
+            let searchResults = try getContext().fetch(fetchRequest)
+            
+            //I like to check the size of the returned results!
+            print ("num of results = \(searchResults.count)")
+            
+            //You need to convert to NSManagedObject to use 'for' loops
+            for trans in searchResults as [NSManagedObject] {
+                //get the Key Value pairs (although there may be a better way to do that...
+                //print("\(trans.value(forKey: "picture_data"))")
+                completion(trans.value(forKey: "picture_data") as! Data?)
+            }
+        } catch {
+            print("Error with request: \(error)")
+        }
     }
 }
