@@ -35,6 +35,9 @@ class OMFBProfile: Mappable {
     var gender  : String?
     var picture : String?
     
+    var educationS : [OMFBEducation]?
+    var work      : [OMFBWork]?
+    
     required init?(map: Map) {
         
     }
@@ -48,5 +51,7 @@ class OMFBProfile: Mappable {
         gender      <- map["gender"]
         picture     <- map["picture.data.url"]
         
+        educationS   <- map["education"]
+        work         <- map["work"]
     }
 }

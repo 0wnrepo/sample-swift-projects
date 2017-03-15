@@ -42,7 +42,6 @@ class ViewController: UIViewController {
     }
     
     //MARK: - graph requests
-    
     func retrieveUserData() {
         self.returnUserData()
         self.getProfilePicture()
@@ -110,7 +109,6 @@ class ViewController: UIViewController {
         
         //set the entity values
         transc.setValue(data, forKey: "picture_data")
-        //transc.setValue(1, forKey: "id")
         
         // Save the data to coredata
         do {

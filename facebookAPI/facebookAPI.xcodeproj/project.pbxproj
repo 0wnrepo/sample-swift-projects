@@ -30,6 +30,14 @@
 		7E73469E1E79D34000FD3EEE /* FBLocation+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E73468E1E79D34000FD3EEE /* FBLocation+CoreDataProperties.swift */; };
 		7E73469F1E79D34000FD3EEE /* FBEmployer+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E73468F1E79D34000FD3EEE /* FBEmployer+CoreDataClass.swift */; };
 		7E7346A01E79D34000FD3EEE /* FBEmployer+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E7346901E79D34000FD3EEE /* FBEmployer+CoreDataProperties.swift */; };
+		7E9FB8F21E79D7B1008B5414 /* facebookData1.json in Resources */ = {isa = PBXBuildFile; fileRef = 7E9FB8F11E79D7B1008B5414 /* facebookData1.json */; };
+		7E9FB8F41E79DE9E008B5414 /* OMFBSchool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E9FB8F31E79DE9E008B5414 /* OMFBSchool.swift */; };
+		7E9FB8F61E79DEAD008B5414 /* OMFBWork.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E9FB8F51E79DEAD008B5414 /* OMFBWork.swift */; };
+		7E9FB8F81E79DEBC008B5414 /* OMFBPosition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E9FB8F71E79DEBC008B5414 /* OMFBPosition.swift */; };
+		7E9FB8FA1E79DEC6008B5414 /* OMFBLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E9FB8F91E79DEC6008B5414 /* OMFBLocation.swift */; };
+		7E9FB8FC1E79DED5008B5414 /* OMFBEducation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E9FB8FB1E79DED5008B5414 /* OMFBEducation.swift */; };
+		7E9FB8FE1E79DEE1008B5414 /* OMFBEmployer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E9FB8FD1E79DEE1008B5414 /* OMFBEmployer.swift */; };
+		7E9FB9001E79DF07008B5414 /* OMFBProjects.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E9FB8FF1E79DF07008B5414 /* OMFBProjects.swift */; };
 		7EE4B5051E75AF98005B5CFC /* NetworkingManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EE4B5041E75AF98005B5CFC /* NetworkingManager.swift */; };
 		F090B87C21B468B3860354F2 /* Pods_facebookAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 55B7107A4CE023687B0A4925 /* Pods_facebookAPI.framework */; };
 /* End PBXBuildFile section */
@@ -62,6 +70,14 @@
 		7E73468E1E79D34000FD3EEE /* FBLocation+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "FBLocation+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		7E73468F1E79D34000FD3EEE /* FBEmployer+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "FBEmployer+CoreDataClass.swift"; sourceTree = "<group>"; };
 		7E7346901E79D34000FD3EEE /* FBEmployer+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "FBEmployer+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		7E9FB8F11E79D7B1008B5414 /* facebookData1.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = facebookData1.json; sourceTree = "<group>"; };
+		7E9FB8F31E79DE9E008B5414 /* OMFBSchool.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OMFBSchool.swift; sourceTree = "<group>"; };
+		7E9FB8F51E79DEAD008B5414 /* OMFBWork.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OMFBWork.swift; sourceTree = "<group>"; };
+		7E9FB8F71E79DEBC008B5414 /* OMFBPosition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OMFBPosition.swift; sourceTree = "<group>"; };
+		7E9FB8F91E79DEC6008B5414 /* OMFBLocation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OMFBLocation.swift; sourceTree = "<group>"; };
+		7E9FB8FB1E79DED5008B5414 /* OMFBEducation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OMFBEducation.swift; sourceTree = "<group>"; };
+		7E9FB8FD1E79DEE1008B5414 /* OMFBEmployer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OMFBEmployer.swift; sourceTree = "<group>"; };
+		7E9FB8FF1E79DF07008B5414 /* OMFBProjects.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OMFBProjects.swift; sourceTree = "<group>"; };
 		7EE167F41E7334D7009CD70E /* facebookAPI-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "facebookAPI-Bridging-Header.h"; sourceTree = "<group>"; };
 		7EE4B5041E75AF98005B5CFC /* NetworkingManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkingManager.swift; sourceTree = "<group>"; };
 		D1315B4CD76E1330E3E45228 /* Pods-facebookAPI.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-facebookAPI.release.xcconfig"; path = "Pods/Target Support Files/Pods-facebookAPI/Pods-facebookAPI.release.xcconfig"; sourceTree = "<group>"; };
@@ -92,6 +108,8 @@
 			isa = PBXGroup;
 			children = (
 				7E10118E1E784C31001A437B /* OMFBProfile.swift */,
+				7E9FB9021E79DF61008B5414 /* Education */,
+				7E9FB9011E79DF57008B5414 /* Work */,
 			);
 			name = JSONModels;
 			sourceTree = "<group>";
@@ -117,6 +135,7 @@
 		7E5C3ACA1E6EE3F200CC7618 /* facebookAPI */ = {
 			isa = PBXGroup;
 			children = (
+				7E9FB8F01E79D779008B5414 /* Examples */,
 				7EE4B4ED1E75972C005B5CFC /* CoreData Models */,
 				7E27EFEB1E749AD5005FE8AD /* JSONModels */,
 				7E5C3ACB1E6EE3F300CC7618 /* AppDelegate.swift */,
@@ -130,6 +149,35 @@
 				7EE167F41E7334D7009CD70E /* facebookAPI-Bridging-Header.h */,
 			);
 			path = facebookAPI;
+			sourceTree = "<group>";
+		};
+		7E9FB8F01E79D779008B5414 /* Examples */ = {
+			isa = PBXGroup;
+			children = (
+				7E9FB8F11E79D7B1008B5414 /* facebookData1.json */,
+			);
+			name = Examples;
+			sourceTree = "<group>";
+		};
+		7E9FB9011E79DF57008B5414 /* Work */ = {
+			isa = PBXGroup;
+			children = (
+				7E9FB8F51E79DEAD008B5414 /* OMFBWork.swift */,
+				7E9FB8F71E79DEBC008B5414 /* OMFBPosition.swift */,
+				7E9FB8F91E79DEC6008B5414 /* OMFBLocation.swift */,
+				7E9FB8FD1E79DEE1008B5414 /* OMFBEmployer.swift */,
+				7E9FB8FF1E79DF07008B5414 /* OMFBProjects.swift */,
+			);
+			name = Work;
+			sourceTree = "<group>";
+		};
+		7E9FB9021E79DF61008B5414 /* Education */ = {
+			isa = PBXGroup;
+			children = (
+				7E9FB8FB1E79DED5008B5414 /* OMFBEducation.swift */,
+				7E9FB8F31E79DE9E008B5414 /* OMFBSchool.swift */,
+			);
+			name = Education;
 			sourceTree = "<group>";
 		};
 		7EE4B4ED1E75972C005B5CFC /* CoreData Models */ = {
@@ -229,6 +277,7 @@
 				7E5C3AD91E6EE3F300CC7618 /* LaunchScreen.storyboard in Resources */,
 				7E5C3AD61E6EE3F300CC7618 /* Assets.xcassets in Resources */,
 				7E5C3AD11E6EE3F300CC7618 /* Main.storyboard in Resources */,
+				7E9FB8F21E79D7B1008B5414 /* facebookData1.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -292,19 +341,26 @@
 				7E5C3ACE1E6EE3F300CC7618 /* ViewController.swift in Sources */,
 				7E10118F1E784C31001A437B /* OMFBProfile.swift in Sources */,
 				7E7346931E79D34000FD3EEE /* FBSchool+CoreDataClass.swift in Sources */,
+				7E9FB8FA1E79DEC6008B5414 /* OMFBLocation.swift in Sources */,
+				7E9FB8F61E79DEAD008B5414 /* OMFBWork.swift in Sources */,
+				7E9FB9001E79DF07008B5414 /* OMFBProjects.swift in Sources */,
 				7E7346981E79D34000FD3EEE /* FBPosition+CoreDataProperties.swift in Sources */,
 				7EE4B5051E75AF98005B5CFC /* NetworkingManager.swift in Sources */,
+				7E9FB8F41E79DE9E008B5414 /* OMFBSchool.swift in Sources */,
 				7E7346A01E79D34000FD3EEE /* FBEmployer+CoreDataProperties.swift in Sources */,
 				7E5C3AD41E6EE3F300CC7618 /* facebookAPI.xcdatamodeld in Sources */,
 				7E73469C1E79D34000FD3EEE /* FBProjects+CoreDataProperties.swift in Sources */,
 				7E5C3ACC1E6EE3F300CC7618 /* AppDelegate.swift in Sources */,
 				7E73469D1E79D34000FD3EEE /* FBLocation+CoreDataClass.swift in Sources */,
+				7E9FB8F81E79DEBC008B5414 /* OMFBPosition.swift in Sources */,
 				7E7346961E79D34000FD3EEE /* FBWork+CoreDataProperties.swift in Sources */,
 				7E73469E1E79D34000FD3EEE /* FBLocation+CoreDataProperties.swift in Sources */,
 				7E7346951E79D34000FD3EEE /* FBWork+CoreDataClass.swift in Sources */,
 				7E7346971E79D34000FD3EEE /* FBPosition+CoreDataClass.swift in Sources */,
+				7E9FB8FE1E79DEE1008B5414 /* OMFBEmployer.swift in Sources */,
 				7E7346991E79D34000FD3EEE /* FBEducation+CoreDataClass.swift in Sources */,
 				7E73469A1E79D34000FD3EEE /* FBEducation+CoreDataProperties.swift in Sources */,
+				7E9FB8FC1E79DED5008B5414 /* OMFBEducation.swift in Sources */,
 				7E7346911E79D34000FD3EEE /* FBProfile+CoreDataClass.swift in Sources */,
 				7E73469F1E79D34000FD3EEE /* FBEmployer+CoreDataClass.swift in Sources */,
 				7E73469B1E79D34000FD3EEE /* FBProjects+CoreDataClass.swift in Sources */,

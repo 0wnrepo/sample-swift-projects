@@ -66,11 +66,9 @@ class NetworkingManager: NSObject {
             }.resume()
     }
     
-    
-    
     func OMTest(completion: @escaping ( _ data: OMFBProfile?) -> Void) {
         //https://developers.facebook.com/tools/explorer?method=GET&path=me%3Ffields%3Did%2Cname%2Cemail%2Cbirthday%2Cgender%2Cpicture%7Burl%7D%26redirect%3Dno&version=v2.4
-        let URL = "https://graph.facebook.com/v2.4/me?fields=id%2Cname%2Cemail%2Cbirthday%2Cgender%2Cpicture%7Burl%7D&redirect=no&access_token=EAACEdEose0cBABTO7zb8mFv2OMgkEFzfdPVeK0wdS2GLnMG76gKb7bM08mUZA1I1rbKoQzlZADK7DcPSkRAilLk2gBLhCveFvp0PM1MxTlT97rXZBAel5RKLsV27xHmr7yhQism6gns47FIRXpoVgEG4IdIENJJeWH7t2jwSqPOQ2orAnW3CdRYr1f229ZBjqKA1B4SVQwZDZD"
+        let URL = "https://graph.facebook.com/v2.4/me?fields=id%2Cname%2Cemail%2Cbirthday%2Cgender%2Ceducation%2Cwork%2Cpicture%7Burl%7D&redirect=no&access_token=EAACEdEose0cBAAT2S9DCADVoGQaYes0tZCrPdX5xjBjxCX1yzkZCLxeB1B07nknzvlVeWq8OVtTcDx2c1TpJJu6uMNT5nhBPZBqF0PtjoQ6eC0i1v5MS5cCcOjmaU3qblKxS5Uvg2CVnUvq2FbOqxsvZBGMJCrlSLprq8CbNDn6nb37NdjMlySgSR3z30U9ccuFqcwpEUQZDZD"
         
         OMTest(url: URL, completion: completion)
     }
@@ -92,12 +90,9 @@ class NetworkingManager: NSObject {
                             print("example success")
                             switch response.result {
                                 case .success (let data):
-                                    //we can ignore SwiftyJSON by directly casting to NSDictionary
-                                    //let json = JSON(data)
-                                    let json2 = data as! [String : Any]
-                                    //let user = Mapper<OMFBProfile>().map(JSON: json.dictionaryObject!)
-                                    let user2 = Mapper<OMFBProfile>().map(JSON: json2)
-                                    completion(user2)
+                                    let json = data as! [String : Any]
+                                    let user = Mapper<OMFBProfile>().map(JSON: json)
+                                    completion(user)
                                 break
                             case .failure(let error):
                                 print("Error: \(error)")
