@@ -1,5 +1,5 @@
 //
-//  FBProfile+CoreDataClass.swift
+//  FBLocation+CoreDataClass.swift
 //  facebookAPI
 //
 //  Created by Good on 15/03/2017.
@@ -9,7 +9,7 @@
 import Foundation
 import CoreData
 
-
-public class FBProfile: NSManagedObject {
+@objc(FBLocation)
+public class FBLocation: NSManagedObject {
 
 }

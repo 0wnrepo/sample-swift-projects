@@ -1,5 +1,26 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="11759" systemVersion="16D32" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="FBEducation" representedClassName=".FBEducation" syncable="YES">
+        <attribute name="id" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="type" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="educationFBProfileInverse" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="FBProfile" inverseName="profileEducation" inverseEntity="FBProfile" syncable="YES"/>
+        <relationship name="educationSchool" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="FBSchool" inverseName="schoolEducation" inverseEntity="FBSchool" syncable="YES"/>
+    </entity>
+    <entity name="FBEmployer" representedClassName=".FBEmployer" syncable="YES">
+        <attribute name="id" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="employerWork" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="FBWork" inverseName="workEmployer" inverseEntity="FBWork" syncable="YES"/>
+    </entity>
+    <entity name="FBLocation" representedClassName=".FBLocation" syncable="YES">
+        <attribute name="id" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="locationWork" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="FBWork" inverseName="workLocation" inverseEntity="FBWork" syncable="YES"/>
+    </entity>
+    <entity name="FBPosition" representedClassName=".FBPosition" syncable="YES">
+        <attribute name="id" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="positionWork" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="FBWork" inverseName="workPosition" inverseEntity="FBWork" syncable="YES"/>
+    </entity>
     <entity name="FBProfile" representedClassName=".FBProfile" syncable="YES">
         <attribute name="birthday" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="email" optional="YES" attributeType="String" syncable="YES"/>
@@ -8,8 +29,42 @@
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="picture_data" optional="YES" attributeType="Binary" syncable="YES"/>
         <attribute name="picture_url" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="profileEducation" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="FBEducation" inverseName="educationFBProfileInverse" inverseEntity="FBEducation" syncable="YES"/>
+        <relationship name="profileProjects" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="FBProjects" inverseName="withFBProfiles" inverseEntity="FBProjects" syncable="YES"/>
+        <relationship name="profileWork" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="FBWork" inverseName="workFBProfileInverse" inverseEntity="FBWork" syncable="YES"/>
+    </entity>
+    <entity name="FBProjects" representedClassName=".FBProjects" syncable="YES">
+        <attribute name="end_date" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="id" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="start_date" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="projectWork" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="FBWork" inverseName="workProjects" inverseEntity="FBWork" syncable="YES"/>
+        <relationship name="withFBProfiles" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="FBProfile" inverseName="profileProjects" inverseEntity="FBProfile" syncable="YES"/>
+    </entity>
+    <entity name="FBSchool" representedClassName=".FBSchool" syncable="YES">
+        <attribute name="id" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="schoolEducation" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="FBEducation" inverseName="educationSchool" inverseEntity="FBEducation" syncable="YES"/>
+    </entity>
+    <entity name="FBWork" representedClassName=".FBWork" syncable="YES">
+        <attribute name="description_str" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="end_date" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="id" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="start_date" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="workEmployer" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="FBEmployer" inverseName="employerWork" inverseEntity="FBEmployer" syncable="YES"/>
+        <relationship name="workFBProfileInverse" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="FBProfile" inverseName="profileWork" inverseEntity="FBProfile" syncable="YES"/>
+        <relationship name="workLocation" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="FBLocation" inverseName="locationWork" inverseEntity="FBLocation" syncable="YES"/>
+        <relationship name="workPosition" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="FBPosition" inverseName="positionWork" inverseEntity="FBPosition" syncable="YES"/>
+        <relationship name="workProjects" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="FBProjects" inverseName="projectWork" inverseEntity="FBProjects" syncable="YES"/>
     </entity>
     <elements>
-        <element name="FBProfile" positionX="-63" positionY="-18" width="128" height="150"/>
+        <element name="FBEducation" positionX="-171" positionY="171" width="128" height="105"/>
+        <element name="FBEmployer" positionX="79" positionY="348" width="128" height="90"/>
+        <element name="FBLocation" positionX="81" positionY="441" width="128" height="90"/>
+        <element name="FBPosition" positionX="36" positionY="549" width="128" height="90"/>
+        <element name="FBProfile" positionX="-290" positionY="-45" width="128" height="195"/>
+        <element name="FBProjects" positionX="306" positionY="189" width="128" height="135"/>
+        <element name="FBSchool" positionX="88" positionY="171" width="128" height="90"/>
+        <element name="FBWork" positionX="-171" positionY="276" width="128" height="180"/>
     </elements>
 </model>

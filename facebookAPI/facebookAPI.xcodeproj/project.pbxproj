@@ -14,8 +14,22 @@
 		7E5C3AD41E6EE3F300CC7618 /* facebookAPI.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 7E5C3AD21E6EE3F300CC7618 /* facebookAPI.xcdatamodeld */; };
 		7E5C3AD61E6EE3F300CC7618 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7E5C3AD51E6EE3F300CC7618 /* Assets.xcassets */; };
 		7E5C3AD91E6EE3F300CC7618 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7E5C3AD71E6EE3F300CC7618 /* LaunchScreen.storyboard */; };
-		7EA36C3E1E797A9A002C17D6 /* FBProfile+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EA36C3C1E797A9A002C17D6 /* FBProfile+CoreDataClass.swift */; };
-		7EA36C3F1E797A9A002C17D6 /* FBProfile+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EA36C3D1E797A9A002C17D6 /* FBProfile+CoreDataProperties.swift */; };
+		7E7346911E79D34000FD3EEE /* FBProfile+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E7346811E79D34000FD3EEE /* FBProfile+CoreDataClass.swift */; };
+		7E7346921E79D34000FD3EEE /* FBProfile+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E7346821E79D34000FD3EEE /* FBProfile+CoreDataProperties.swift */; };
+		7E7346931E79D34000FD3EEE /* FBSchool+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E7346831E79D34000FD3EEE /* FBSchool+CoreDataClass.swift */; };
+		7E7346941E79D34000FD3EEE /* FBSchool+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E7346841E79D34000FD3EEE /* FBSchool+CoreDataProperties.swift */; };
+		7E7346951E79D34000FD3EEE /* FBWork+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E7346851E79D34000FD3EEE /* FBWork+CoreDataClass.swift */; };
+		7E7346961E79D34000FD3EEE /* FBWork+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E7346861E79D34000FD3EEE /* FBWork+CoreDataProperties.swift */; };
+		7E7346971E79D34000FD3EEE /* FBPosition+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E7346871E79D34000FD3EEE /* FBPosition+CoreDataClass.swift */; };
+		7E7346981E79D34000FD3EEE /* FBPosition+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E7346881E79D34000FD3EEE /* FBPosition+CoreDataProperties.swift */; };
+		7E7346991E79D34000FD3EEE /* FBEducation+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E7346891E79D34000FD3EEE /* FBEducation+CoreDataClass.swift */; };
+		7E73469A1E79D34000FD3EEE /* FBEducation+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E73468A1E79D34000FD3EEE /* FBEducation+CoreDataProperties.swift */; };
+		7E73469B1E79D34000FD3EEE /* FBProjects+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E73468B1E79D34000FD3EEE /* FBProjects+CoreDataClass.swift */; };
+		7E73469C1E79D34000FD3EEE /* FBProjects+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E73468C1E79D34000FD3EEE /* FBProjects+CoreDataProperties.swift */; };
+		7E73469D1E79D34000FD3EEE /* FBLocation+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E73468D1E79D34000FD3EEE /* FBLocation+CoreDataClass.swift */; };
+		7E73469E1E79D34000FD3EEE /* FBLocation+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E73468E1E79D34000FD3EEE /* FBLocation+CoreDataProperties.swift */; };
+		7E73469F1E79D34000FD3EEE /* FBEmployer+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E73468F1E79D34000FD3EEE /* FBEmployer+CoreDataClass.swift */; };
+		7E7346A01E79D34000FD3EEE /* FBEmployer+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E7346901E79D34000FD3EEE /* FBEmployer+CoreDataProperties.swift */; };
 		7EE4B5051E75AF98005B5CFC /* NetworkingManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EE4B5041E75AF98005B5CFC /* NetworkingManager.swift */; };
 		F090B87C21B468B3860354F2 /* Pods_facebookAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 55B7107A4CE023687B0A4925 /* Pods_facebookAPI.framework */; };
 /* End PBXBuildFile section */
@@ -32,8 +46,22 @@
 		7E5C3AD51E6EE3F300CC7618 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7E5C3AD81E6EE3F300CC7618 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7E5C3ADA1E6EE3F300CC7618 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		7EA36C3C1E797A9A002C17D6 /* FBProfile+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "FBProfile+CoreDataClass.swift"; sourceTree = "<group>"; };
-		7EA36C3D1E797A9A002C17D6 /* FBProfile+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "FBProfile+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		7E7346811E79D34000FD3EEE /* FBProfile+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "FBProfile+CoreDataClass.swift"; sourceTree = "<group>"; };
+		7E7346821E79D34000FD3EEE /* FBProfile+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "FBProfile+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		7E7346831E79D34000FD3EEE /* FBSchool+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "FBSchool+CoreDataClass.swift"; sourceTree = "<group>"; };
+		7E7346841E79D34000FD3EEE /* FBSchool+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "FBSchool+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		7E7346851E79D34000FD3EEE /* FBWork+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "FBWork+CoreDataClass.swift"; sourceTree = "<group>"; };
+		7E7346861E79D34000FD3EEE /* FBWork+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "FBWork+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		7E7346871E79D34000FD3EEE /* FBPosition+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "FBPosition+CoreDataClass.swift"; sourceTree = "<group>"; };
+		7E7346881E79D34000FD3EEE /* FBPosition+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "FBPosition+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		7E7346891E79D34000FD3EEE /* FBEducation+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "FBEducation+CoreDataClass.swift"; sourceTree = "<group>"; };
+		7E73468A1E79D34000FD3EEE /* FBEducation+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "FBEducation+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		7E73468B1E79D34000FD3EEE /* FBProjects+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "FBProjects+CoreDataClass.swift"; sourceTree = "<group>"; };
+		7E73468C1E79D34000FD3EEE /* FBProjects+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "FBProjects+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		7E73468D1E79D34000FD3EEE /* FBLocation+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "FBLocation+CoreDataClass.swift"; sourceTree = "<group>"; };
+		7E73468E1E79D34000FD3EEE /* FBLocation+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "FBLocation+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		7E73468F1E79D34000FD3EEE /* FBEmployer+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "FBEmployer+CoreDataClass.swift"; sourceTree = "<group>"; };
+		7E7346901E79D34000FD3EEE /* FBEmployer+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "FBEmployer+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		7EE167F41E7334D7009CD70E /* facebookAPI-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "facebookAPI-Bridging-Header.h"; sourceTree = "<group>"; };
 		7EE4B5041E75AF98005B5CFC /* NetworkingManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkingManager.swift; sourceTree = "<group>"; };
 		D1315B4CD76E1330E3E45228 /* Pods-facebookAPI.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-facebookAPI.release.xcconfig"; path = "Pods/Target Support Files/Pods-facebookAPI/Pods-facebookAPI.release.xcconfig"; sourceTree = "<group>"; };
@@ -107,8 +135,22 @@
 		7EE4B4ED1E75972C005B5CFC /* CoreData Models */ = {
 			isa = PBXGroup;
 			children = (
-				7EA36C3C1E797A9A002C17D6 /* FBProfile+CoreDataClass.swift */,
-				7EA36C3D1E797A9A002C17D6 /* FBProfile+CoreDataProperties.swift */,
+				7E7346811E79D34000FD3EEE /* FBProfile+CoreDataClass.swift */,
+				7E7346821E79D34000FD3EEE /* FBProfile+CoreDataProperties.swift */,
+				7E7346831E79D34000FD3EEE /* FBSchool+CoreDataClass.swift */,
+				7E7346841E79D34000FD3EEE /* FBSchool+CoreDataProperties.swift */,
+				7E7346851E79D34000FD3EEE /* FBWork+CoreDataClass.swift */,
+				7E7346861E79D34000FD3EEE /* FBWork+CoreDataProperties.swift */,
+				7E7346871E79D34000FD3EEE /* FBPosition+CoreDataClass.swift */,
+				7E7346881E79D34000FD3EEE /* FBPosition+CoreDataProperties.swift */,
+				7E7346891E79D34000FD3EEE /* FBEducation+CoreDataClass.swift */,
+				7E73468A1E79D34000FD3EEE /* FBEducation+CoreDataProperties.swift */,
+				7E73468B1E79D34000FD3EEE /* FBProjects+CoreDataClass.swift */,
+				7E73468C1E79D34000FD3EEE /* FBProjects+CoreDataProperties.swift */,
+				7E73468D1E79D34000FD3EEE /* FBLocation+CoreDataClass.swift */,
+				7E73468E1E79D34000FD3EEE /* FBLocation+CoreDataProperties.swift */,
+				7E73468F1E79D34000FD3EEE /* FBEmployer+CoreDataClass.swift */,
+				7E7346901E79D34000FD3EEE /* FBEmployer+CoreDataProperties.swift */,
 			);
 			name = "CoreData Models";
 			sourceTree = "<group>";
@@ -245,13 +287,27 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7EA36C3F1E797A9A002C17D6 /* FBProfile+CoreDataProperties.swift in Sources */,
+				7E7346921E79D34000FD3EEE /* FBProfile+CoreDataProperties.swift in Sources */,
+				7E7346941E79D34000FD3EEE /* FBSchool+CoreDataProperties.swift in Sources */,
 				7E5C3ACE1E6EE3F300CC7618 /* ViewController.swift in Sources */,
 				7E10118F1E784C31001A437B /* OMFBProfile.swift in Sources */,
+				7E7346931E79D34000FD3EEE /* FBSchool+CoreDataClass.swift in Sources */,
+				7E7346981E79D34000FD3EEE /* FBPosition+CoreDataProperties.swift in Sources */,
 				7EE4B5051E75AF98005B5CFC /* NetworkingManager.swift in Sources */,
+				7E7346A01E79D34000FD3EEE /* FBEmployer+CoreDataProperties.swift in Sources */,
 				7E5C3AD41E6EE3F300CC7618 /* facebookAPI.xcdatamodeld in Sources */,
+				7E73469C1E79D34000FD3EEE /* FBProjects+CoreDataProperties.swift in Sources */,
 				7E5C3ACC1E6EE3F300CC7618 /* AppDelegate.swift in Sources */,
-				7EA36C3E1E797A9A002C17D6 /* FBProfile+CoreDataClass.swift in Sources */,
+				7E73469D1E79D34000FD3EEE /* FBLocation+CoreDataClass.swift in Sources */,
+				7E7346961E79D34000FD3EEE /* FBWork+CoreDataProperties.swift in Sources */,
+				7E73469E1E79D34000FD3EEE /* FBLocation+CoreDataProperties.swift in Sources */,
+				7E7346951E79D34000FD3EEE /* FBWork+CoreDataClass.swift in Sources */,
+				7E7346971E79D34000FD3EEE /* FBPosition+CoreDataClass.swift in Sources */,
+				7E7346991E79D34000FD3EEE /* FBEducation+CoreDataClass.swift in Sources */,
+				7E73469A1E79D34000FD3EEE /* FBEducation+CoreDataProperties.swift in Sources */,
+				7E7346911E79D34000FD3EEE /* FBProfile+CoreDataClass.swift in Sources */,
+				7E73469F1E79D34000FD3EEE /* FBEmployer+CoreDataClass.swift in Sources */,
+				7E73469B1E79D34000FD3EEE /* FBProjects+CoreDataClass.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

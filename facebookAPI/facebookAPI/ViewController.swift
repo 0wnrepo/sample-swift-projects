@@ -11,8 +11,7 @@ import FacebookLogin
 import Alamofire
 import CoreData
 
-
-class ViewController: UIViewController, LoginButtonDelegate {
+class ViewController: UIViewController {
     @IBOutlet weak var imageView: UIImageView!
 
     override func viewDidLoad() {
@@ -28,14 +27,7 @@ class ViewController: UIViewController, LoginButtonDelegate {
             view.addSubview(loginButton)
             loginButton.delegate = self
             
-            self.returnUserData()
-            self.getProfilePicture()
-            
-            //Alamofire networking + OBjectMapper JSON mapping to plain old SWift Object Model
-            let nm = NetworkingManager.sharedInstance
-            nm.OMTest(completion: { (profile) in
-                print("parsed JSON data - user e-mail: \(profile?.email)")
-            })
+            self.retrieveUserData()
         } else {
             let loginButton = LoginButton(readPermissions: [ .publicProfile, .email, .userFriends ])
             loginButton.center = view.center
@@ -49,31 +41,18 @@ class ViewController: UIViewController, LoginButtonDelegate {
         // Dispose of any resources that can be recreated.
     }
     
-    //MARK: - LoginButtonDelegate
-    func loginButtonDidCompleteLogin(_ loginButton: LoginButton, result: LoginResult) {
-        print("User Logged In")
-        
-        switch result {
-        case .failed(let error):
-            print("FACEBOOK LOGIN FAILED: \(error)")
-        case .cancelled:
-            print("User cancelled login.")
-        case .success(let grantedPermissions, let declinedPermissions, let accessToken):
-            print("Logged in!")
-            print("GRANTED PERMISSIONS: \(grantedPermissions)")
-            print("DECLINED PERMISSIONS: \(declinedPermissions)")
-            print("ACCESS TOKEN \(accessToken)")
-        }
-        
+    //MARK: - graph requests
+    
+    func retrieveUserData() {
         self.returnUserData()
         self.getProfilePicture()
+        
+        //Alamofire networking + OBjectMapper JSON mapping to plain old SWift Object Model
+        let nm = NetworkingManager.sharedInstance
+        nm.OMTest(completion: { (profile) in
+            print("parsed JSON data - user e-mail: \(profile?.email)")
+        })
     }
-    
-    func loginButtonDidLogOut(_ loginButton: LoginButton) {
-        print("User Logged Out")
-    }
-    
-    //MARK: - graph requests
     
     func returnUserData() {
         let graphRequest : FBSDKGraphRequest = FBSDKGraphRequest(graphPath: "me?fields=id,name,email,birthday,gender,education,work", parameters: nil)
@@ -164,5 +143,32 @@ class ViewController: UIViewController, LoginButtonDelegate {
         } catch {
             print("Error with request: \(error)")
         }
+    }
+}
+
+extension ViewController: LoginButtonDelegate {
+    //MARK: - LoginButtonDelegate
+    func loginButtonDidCompleteLogin(_ loginButton: LoginButton, result: LoginResult) {
+        print("User Logged In")
+        
+        switch result {
+        case .failed(let error):
+            print("FACEBOOK LOGIN FAILED: \(error)")
+            break
+        case .cancelled:
+            print("User cancelled login.")
+            break
+        case .success(let grantedPermissions, let declinedPermissions, let accessToken):
+            print("Logged in!")
+            print("GRANTED PERMISSIONS: \(grantedPermissions)")
+            print("DECLINED PERMISSIONS: \(declinedPermissions)")
+            print("ACCESS TOKEN \(accessToken)")
+            self.retrieveUserData()
+            break
+        }
+    }
+    
+    func loginButtonDidLogOut(_ loginButton: LoginButton) {
+        print("User Logged Out")
     }
 }
