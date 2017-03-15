@@ -21,7 +21,7 @@ import ObjectMapper
     "gender":"male",
     "picture":{
         "data":{
-        "url":"https://scontent.xx.fbcdn.net/v/t1.0-1/p50x50/17103255_1416521411737998_6052762405151729930_n.jpg?oh=5b41c6219234b38615e7d3164e5b9b55&oe=595CCFF1"
+            "url":"https://scontent.xx.fbcdn.net/v/t1.0-1/p50x50/17103255_1416521411737998_6052762405151729930_n.jpg?oh=5b41c6219234b38615e7d3164e5b9b55&oe=595CCFF1"
         }
     }
  }

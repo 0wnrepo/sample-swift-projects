@@ -11,6 +11,7 @@ import FacebookLogin
 import Alamofire
 import CoreData
 
+
 class ViewController: UIViewController, LoginButtonDelegate {
     @IBOutlet weak var imageView: UIImageView!
 
@@ -48,6 +49,7 @@ class ViewController: UIViewController, LoginButtonDelegate {
         // Dispose of any resources that can be recreated.
     }
     
+    //MARK: - LoginButtonDelegate
     func loginButtonDidCompleteLogin(_ loginButton: LoginButton, result: LoginResult) {
         print("User Logged In")
         
@@ -70,6 +72,8 @@ class ViewController: UIViewController, LoginButtonDelegate {
     func loginButtonDidLogOut(_ loginButton: LoginButton) {
         print("User Logged Out")
     }
+    
+    //MARK: - graph requests
     
     func returnUserData() {
         let graphRequest : FBSDKGraphRequest = FBSDKGraphRequest(graphPath: "me?fields=id,name,email,birthday,gender,education,work", parameters: nil)
@@ -111,7 +115,7 @@ class ViewController: UIViewController, LoginButtonDelegate {
         })
     }
         
-    //------data
+    //MARK: - CoreData helpers
     func getContext () -> NSManagedObjectContext {
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         return appDelegate.persistentContainer.viewContext
@@ -127,7 +131,7 @@ class ViewController: UIViewController, LoginButtonDelegate {
         
         //set the entity values
         transc.setValue(data, forKey: "picture_data")
-        transc.setValue(1, forKey: "id")
+        //transc.setValue(1, forKey: "id")
         
         // Save the data to coredata
         do {
