@@ -28,7 +28,7 @@ target 'facebookAPI' do
   #Coredata helper - SugarRecord
   pod "SugarRecord/CoreData"
   
-  #Swinject
-  #pod 'Swinject', '~> 2.0.0'
+  #Swinject - Unitest relp!
+  pod 'Swinject', '~> 2.0.0'
 
 end

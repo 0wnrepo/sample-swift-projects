@@ -29,6 +29,7 @@ PODS:
   - Result (3.2.1)
   - SugarRecord/CoreData (3.0.0):
     - Result (~> 3.0)
+  - Swinject (2.0.0)
 
 DEPENDENCIES:
   - Alamofire (~> 4.4)
@@ -37,6 +38,7 @@ DEPENDENCIES:
   - FacebookShare
   - ObjectMapper (~> 2.2)
   - SugarRecord/CoreData
+  - Swinject (~> 2.0.0)
 
 SPEC CHECKSUMS:
   Alamofire: dc44b1600b800eb63da6a19039a0083d62a6a62d
@@ -50,7 +52,8 @@ SPEC CHECKSUMS:
   ObjectMapper: fb30f71e08470d1e5a20b199fafe1246281db898
   Result: 2453a22e5c5b11c0c3a478736e82cd02f763b781
   SugarRecord: c17d4a17b257cac4c4355b2790685b1e49b32de3
+  Swinject: 2e964a80d70ab09b3949c99032711f89147bfd60
 
-PODFILE CHECKSUM: 765c2dc19b27e7d7dfc6be8fcb007adf1f52a4a4
+PODFILE CHECKSUM: a3d2b4040917dd8db53c37f2a19f04893e58d19f
 
 COCOAPODS: 1.2.0
