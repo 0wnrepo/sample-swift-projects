@@ -11,5 +11,8 @@ import CoreData
 
 @objc(FBSchool)
 public class FBSchool: NSManagedObject {
-
+    func toObject() -> OMFBSchool {
+        let school = OMFBSchool(id: id, name: name)
+        return school
+    }
 }

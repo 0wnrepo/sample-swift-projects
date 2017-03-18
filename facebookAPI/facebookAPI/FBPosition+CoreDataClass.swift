@@ -12,4 +12,8 @@ import CoreData
 @objc(FBPosition)
 public class FBPosition: NSManagedObject {
 
+    func toObject() -> OMFBPosition {
+        let position = OMFBPosition(id: id, name: name)
+        return position
+    }
 }

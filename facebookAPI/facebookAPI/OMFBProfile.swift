@@ -27,7 +27,7 @@ import ObjectMapper
  }
  */
 
-class OMFBProfile: Mappable {
+class OMFBProfile: Mappable, Equatable {
     var id_P    : String?
     var name    : String?
     var email   : String?
@@ -36,10 +36,30 @@ class OMFBProfile: Mappable {
     var picture : String?
     
     var educationS : [OMFBEducation]?
-    var work      : [OMFBWork]?
+    var work       : [OMFBWork]?
     
     required init?(map: Map) {
         
+    }
+    
+    // MARK: - Initializer
+    init(id: String?,
+         name: String?,
+         email: String?,
+         birthday: String?,
+         gender: String?,
+         picture: String?,
+         education: [OMFBEducation]?,
+         work: [OMFBWork]?) {
+        
+        self.id_P   = id
+        self.name   = name
+        self.email  = email
+        self.birthday   = birthday
+        self.gender     = gender
+        self.picture    = picture
+        self.educationS = education
+        self.work       = work
     }
     
     // Mappable
@@ -53,5 +73,9 @@ class OMFBProfile: Mappable {
         
         educationS   <- map["education"]
         work         <- map["work"]
+    }
+    
+    public static func ==(lhs: OMFBProfile, rhs: OMFBProfile) -> Bool {
+        return lhs.id_P == rhs.id_P
     }
 }

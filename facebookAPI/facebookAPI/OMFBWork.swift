@@ -9,7 +9,7 @@
 import Foundation
 import ObjectMapper
 
-class OMFBWork: Mappable {
+class OMFBWork: Mappable, Equatable {
     var id_E            : String?
     var startDate       : String?
     var endDate         : String?
@@ -24,6 +24,29 @@ class OMFBWork: Mappable {
         
     }
     
+    // MARK: - Initializer
+    init(id: String?,
+        startDate: String?,
+        endDate: String?,
+        descriptionStr: String?,
+        
+        position:OMFBPosition?,
+        location:OMFBLocation?,
+        employer:OMFBEmployer?,
+        projects:[OMFBProjects]?) {
+        
+        self.id_E = id
+        self.startDate = startDate
+        self.endDate = endDate
+        self.descriptionStr = descriptionStr
+        
+        self.position = position
+        self.location = location
+        self.employer = employer
+        self.projects = projects
+        
+    }
+    
     // Mappable
     func mapping(map: Map) {
         id_E             <- map["id"]
@@ -35,5 +58,9 @@ class OMFBWork: Mappable {
         location         <- map["location"]
         employer         <- map["employer"]
         projects         <- map["projects"]
+    }
+    
+    public static func ==(lhs: OMFBWork, rhs: OMFBWork) -> Bool {
+        return lhs.id_E == rhs.id_E
     }
 }

@@ -15,7 +15,6 @@ import ObjectMapper
 
 class NetworkingManager: NSObject {
     
-    //singleton
     class var sharedInstance: NetworkingManager {
         struct Static {
             static let instance: NetworkingManager = NetworkingManager()
@@ -102,11 +101,6 @@ class NetworkingManager: NSObject {
                             print("error with response status: \(status)")
                         }
                 }
-//                //to get JSON return value
-//                if let result = response.result.value {
-//                    let JSON = result as! NSDictionary
-//                    print(JSON)
-//                }
-        }
+            }
     }
 }

@@ -12,4 +12,8 @@ import CoreData
 @objc(FBLocation)
 public class FBLocation: NSManagedObject {
 
+    func toObject() -> OMFBLocation {
+        let location = OMFBLocation(id: id, name: name)
+        return location
+    }
 }

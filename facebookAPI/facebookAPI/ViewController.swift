@@ -10,6 +10,7 @@ import UIKit
 import FacebookLogin
 import Alamofire
 import CoreData
+import SugarRecord
 
 class ViewController: UIViewController {
     @IBOutlet weak var imageView: UIImageView!
@@ -28,6 +29,7 @@ class ViewController: UIViewController {
             loginButton.delegate = self
             
             self.retrieveUserData()
+    
         } else {
             let loginButton = LoginButton(readPermissions: [ .publicProfile, .email, .userFriends ])
             loginButton.center = view.center
@@ -168,5 +170,13 @@ extension ViewController: LoginButtonDelegate {
     
     func loginButtonDidLogOut(_ loginButton: LoginButton) {
         print("User Logged Out")
+    }
+}
+
+extension ViewController {
+    func loadDefaultStorage() -> CoreDataDefaultStorage {
+        let store = CoreDataStore.named("main")
+        let model = CoreDataObjectModel.merged([Bundle.main])
+        return try! CoreDataDefaultStorage(store: store, model: model)
     }
 }

@@ -12,4 +12,8 @@ import CoreData
 @objc(FBEmployer)
 public class FBEmployer: NSManagedObject {
 
+    func toObject() -> OMFBEmployer {
+        let employer = OMFBEmployer(id: id, name: name)
+        return employer
+    }
 }

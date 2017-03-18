@@ -9,7 +9,7 @@
 import Foundation
 import ObjectMapper
 
-class OMFBLocation: Mappable {
+class OMFBLocation: Mappable, Equatable {
     var id_E    : String?
     var name    : String?
     
@@ -17,9 +17,20 @@ class OMFBLocation: Mappable {
         
     }
     
+    // MARK: - Initializer
+    init (id: String?,
+          name: String?) {
+        self.id_E = id
+        self.name = name
+    }
+    
     // Mappable
     func mapping(map: Map) {
         id_E        <- map["id"]
         name        <- map["name"]
+    }
+    
+    public static func ==(lhs: OMFBLocation, rhs: OMFBLocation) -> Bool {
+        return lhs.id_E == rhs.id_E
     }
 }

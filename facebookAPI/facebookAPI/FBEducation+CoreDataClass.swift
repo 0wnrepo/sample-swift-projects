@@ -11,5 +11,10 @@ import CoreData
 
 @objc(FBEducation)
 public class FBEducation: NSManagedObject {
-
+    func toObject() -> OMFBEducation {
+        let education = OMFBEducation(id: id, type: type, school: educationSchool?.toObject())
+        return education
+    }
+    
+    
 }
