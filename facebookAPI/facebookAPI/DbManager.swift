@@ -50,7 +50,7 @@ class DbManager: DbManagerProtocol {
     // MARK: - Initializer
     init(storage: CoreDataDefaultStorage) {
         self.storage = storage
-        (self.storage.memoryContext as! NSManagedObjectContext).mergePolicy = NSMergeByPropertyObjectTrumpMergePolicy
+        (self.storage.mainContext as! NSManagedObjectContext).mergePolicy = NSMergeByPropertyObjectTrumpMergePolicy
         (self.storage.saveContext as! NSManagedObjectContext).mergePolicy = NSMergeByPropertyObjectTrumpMergePolicy
     }
 }

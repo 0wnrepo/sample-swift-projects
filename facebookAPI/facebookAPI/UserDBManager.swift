@@ -38,7 +38,7 @@ class UserDbManager: MTDbManager, UserDbManagerProtocol {
     }
     
     func fetchUser(with userId: String) -> FBProfile? {
-        let request = self.mainContext.request(FBProfile.self).filtered(with: "id_P", equalTo: userId)
+        let request = self.mainContext.request(FBProfile.self).filtered(with: "id", equalTo: userId)
         let user = try? self.mainContext.fetch(request).first
         return user ?? nil
     }

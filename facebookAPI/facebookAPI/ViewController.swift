@@ -43,34 +43,36 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    //MARK: - graph requests
+    func processProfile(_ jsonProfile: OMFBProfile) {
+        print("parsed JSON data - user e-mail: \(jsonProfile.email)")
+        
+        let db = DbManager.sharedInstance
+        
+        let userDb = UserDbManager.init(mainContext: db.storage.mainContext, saveContext: db.storage.mainContext)
+        let id_s : String = (jsonProfile.id_P)!
+        var coreDataProfile : FBProfile? = userDb.fetchUser(with: id_s)
+        
+        if coreDataProfile == nil {
+            userDb.saveUser(user: jsonProfile)
+        }
+        
+        coreDataProfile = userDb.fetchUser(with: id_s)
+        
+        print("\(coreDataProfile?.email)")
+    }
+    
+    //MARK: - requests
     func retrieveUserData() {
-        self.returnUserData()
         self.getProfilePicture()
         
         //Alamofire networking + OBjectMapper JSON mapping to plain old SWift Object Model
         let nm = NetworkingManager.sharedInstance
-        nm.OMTest(completion: { (profile) in
-            print("parsed JSON data - user e-mail: \(profile?.email)")
+        nm.OMTestAlamofire(completion: { (jsonProfile) in
+            self.processProfile(jsonProfile!)
         })
-    }
-    
-    func returnUserData() {
-        let graphRequest : FBSDKGraphRequest = FBSDKGraphRequest(graphPath: "me?fields=id,name,email,birthday,gender,education,work", parameters: nil)
-        graphRequest.start(completionHandler: { (connection, result, error) -> Void in
-            
-            if ((error) != nil) {
-                // Process error
-                print("Error: \(error)")
-            } else {
-                let resultDic = result as! [String : Any]
-                
-                print("fetched user: \(result)")
-                let userName : NSString = resultDic["name"] as! NSString
-                print("User Name is: \(userName)")
-                let userEmail : NSString = resultDic["email"] as! NSString
-                print("User Email is: \(userEmail)")
-            }
+        
+        nm.OMTestWithFacebookGraphRequest(completion: { (jsonProfile) in
+            self.processProfile(jsonProfile!)
         })
     }
     
@@ -146,8 +148,9 @@ class ViewController: UIViewController {
     }
 }
 
+//MARK: - LoginButtonDelegate
+
 extension ViewController: LoginButtonDelegate {
-    //MARK: - LoginButtonDelegate
     func loginButtonDidCompleteLogin(_ loginButton: LoginButton, result: LoginResult) {
         print("User Logged In")
         
@@ -173,10 +176,10 @@ extension ViewController: LoginButtonDelegate {
     }
 }
 
-extension ViewController {
-    func loadDefaultStorage() -> CoreDataDefaultStorage {
-        let store = CoreDataStore.named("main")
-        let model = CoreDataObjectModel.merged([Bundle.main])
-        return try! CoreDataDefaultStorage(store: store, model: model)
-    }
-}
+//extension ViewController {
+//    func loadDefaultStorage() -> CoreDataDefaultStorage {
+//        let store = CoreDataStore.named("facebookAPI")
+//        let model = CoreDataObjectModel.merged([Bundle.main])
+//        return try! CoreDataDefaultStorage(store: store, model: model)
+//    }
+//}

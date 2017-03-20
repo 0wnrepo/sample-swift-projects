@@ -11,7 +11,10 @@ import Alamofire
 import FacebookLogin
 import ObjectMapper
 
-
+import UIKit
+import Alamofire
+import CoreData
+import SugarRecord
 
 class NetworkingManager: NSObject {
     
@@ -65,14 +68,13 @@ class NetworkingManager: NSObject {
             }.resume()
     }
     
-    func OMTest(completion: @escaping ( _ data: OMFBProfile?) -> Void) {
+    func OMTestAlamofire(completion: @escaping ( _ data: OMFBProfile?) -> Void) {
         //https://developers.facebook.com/tools/explorer?method=GET&path=me%3Ffields%3Did%2Cname%2Cemail%2Cbirthday%2Cgender%2Cpicture%7Burl%7D%26redirect%3Dno&version=v2.4
-        let URL = "https://graph.facebook.com/v2.4/me?fields=id%2Cname%2Cemail%2Cbirthday%2Cgender%2Ceducation%2Cwork%2Cpicture%7Burl%7D&redirect=no&access_token=EAACEdEose0cBAAT2S9DCADVoGQaYes0tZCrPdX5xjBjxCX1yzkZCLxeB1B07nknzvlVeWq8OVtTcDx2c1TpJJu6uMNT5nhBPZBqF0PtjoQ6eC0i1v5MS5cCcOjmaU3qblKxS5Uvg2CVnUvq2FbOqxsvZBGMJCrlSLprq8CbNDn6nb37NdjMlySgSR3z30U9ccuFqcwpEUQZDZD"
+        let URL = "https://graph.facebook.com/v2.4/me?fields=id%2Cname%2Cemail%2Cbirthday%2Cgender%2Ceducation%2Cwork%2Cpicture%7Burl%7D&redirect=no&access_token=EAACEdEose0cBALXah5QSgtY1wYfa3Epmx8H2XzqCYwGv1takHxZA97Jkmc7gBPkP7LYDsv9NhfCATul27CAwlBkZA0zskdqvWsEs7iNRQgiYzFHw514nbK7dZBhDZCZA8poJ9cuyFgYngBifXjACSkHAK8Qf9cMzmAYezS7EDkpn3HLy10g2QkBbvSbX5MSSHoXMRhNtZARAZDZD"
         
         OMTest(url: URL, completion: completion)
     }
     
-    //TODO: maybe implement JSON parsing with alamofire only and mapping to object model
     //https://gist.github.com/jpotts18/e39ee74de84ae094b270
     //https://grokswift.com/updating-alamofire-to-swift-3-0/
     
@@ -102,5 +104,20 @@ class NetworkingManager: NSObject {
                         }
                 }
             }
+    }
+    
+    func OMTestWithFacebookGraphRequest(completion: @escaping (_ data: OMFBProfile?) -> Void) {
+        let graphRequest : FBSDKGraphRequest = FBSDKGraphRequest(graphPath: "me?fields=id,name,email,birthday,gender,education,work", parameters: nil)
+        graphRequest.start(completionHandler: { (connection, result, error) -> Void in
+            
+            if ((error) != nil) {
+                // Process error
+                print("Error: \(error)")
+            } else {
+                let json = result as! [String : Any]
+                let user = Mapper<OMFBProfile>().map(JSON: json)
+                completion(user)
+            }
+        })
     }
 }
