@@ -56,6 +56,9 @@
 		7E63B4541E8ABCE2009A5A1A /* SSYearNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E63B42A1E8ABCE2009A5A1A /* SSYearNode.m */; };
 		7E63B4571E8AC0F2009A5A1A /* SCCalendarMonthlyView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7E63B4551E8AC0F2009A5A1A /* SCCalendarMonthlyView.xib */; };
 		7E63B4581E8AC0F2009A5A1A /* SCCalendarMonthlyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E63B4561E8AC0F2009A5A1A /* SCCalendarMonthlyViewController.swift */; };
+		7E63B4611E8AE38B009A5A1A /* SSCalendarHybridViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E63B45F1E8AE38B009A5A1A /* SSCalendarHybridViewController.m */; };
+		7E63B4621E8AE38B009A5A1A /* SSCalendarHybridViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7E63B4601E8AE38B009A5A1A /* SSCalendarHybridViewController.xib */; };
+		7E63B4661E8AEECB009A5A1A /* SSCalendarHybridDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E63B4651E8AEECB009A5A1A /* SSCalendarHybridDataSource.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -145,6 +148,11 @@
 		7E63B42A1E8ABCE2009A5A1A /* SSYearNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSYearNode.m; sourceTree = "<group>"; };
 		7E63B4551E8AC0F2009A5A1A /* SCCalendarMonthlyView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SCCalendarMonthlyView.xib; sourceTree = "<group>"; };
 		7E63B4561E8AC0F2009A5A1A /* SCCalendarMonthlyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SCCalendarMonthlyViewController.swift; sourceTree = "<group>"; };
+		7E63B45E1E8AE38B009A5A1A /* SSCalendarHybridViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSCalendarHybridViewController.h; sourceTree = "<group>"; };
+		7E63B45F1E8AE38B009A5A1A /* SSCalendarHybridViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSCalendarHybridViewController.m; sourceTree = "<group>"; };
+		7E63B4601E8AE38B009A5A1A /* SSCalendarHybridViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SSCalendarHybridViewController.xib; sourceTree = "<group>"; };
+		7E63B4641E8AEECB009A5A1A /* SSCalendarHybridDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSCalendarHybridDataSource.h; sourceTree = "<group>"; };
+		7E63B4651E8AEECB009A5A1A /* SSCalendarHybridDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSCalendarHybridDataSource.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -357,6 +365,7 @@
 				7E63B4021E8ABCE2009A5A1A /* SSCalendarMonthlyViewController.h */,
 				7E63B4031E8ABCE2009A5A1A /* SSCalendarMonthlyViewController.m */,
 				7E63B4041E8ABCE2009A5A1A /* SSCalendarMonthlyViewController.xib */,
+				7E63B4631E8AEEAF009A5A1A /* hybrid */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -452,6 +461,18 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
+		7E63B4631E8AEEAF009A5A1A /* hybrid */ = {
+			isa = PBXGroup;
+			children = (
+				7E63B45E1E8AE38B009A5A1A /* SSCalendarHybridViewController.h */,
+				7E63B45F1E8AE38B009A5A1A /* SSCalendarHybridViewController.m */,
+				7E63B4601E8AE38B009A5A1A /* SSCalendarHybridViewController.xib */,
+				7E63B4641E8AEECB009A5A1A /* SSCalendarHybridDataSource.h */,
+				7E63B4651E8AEECB009A5A1A /* SSCalendarHybridDataSource.m */,
+			);
+			name = hybrid;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -513,6 +534,7 @@
 			files = (
 				7E63B4361E8ABCE2009A5A1A /* SSCalendarEventsCell.xib in Resources */,
 				7E63B44B1E8ABCE2009A5A1A /* SSCalendarAnnualViewController.xib in Resources */,
+				7E63B4621E8AE38B009A5A1A /* SSCalendarHybridViewController.xib in Resources */,
 				7E63B4451E8ABCE2009A5A1A /* SSCalendarMonthlyHeaderView.xib in Resources */,
 				7E63B3261E8AB143009A5A1A /* LaunchScreen.storyboard in Resources */,
 				7E63B4571E8AC0F2009A5A1A /* SCCalendarMonthlyView.xib in Resources */,
@@ -549,10 +571,12 @@
 				7E63B4521E8ABCE2009A5A1A /* SSEvent.m in Sources */,
 				7E63B43D1E8ABCE2009A5A1A /* SSCalendarWeekLayout.m in Sources */,
 				7E63B4421E8ABCE2009A5A1A /* SSCalendarMonthlyViewController.m in Sources */,
+				7E63B4611E8AE38B009A5A1A /* SSCalendarHybridViewController.m in Sources */,
 				7E63B31E1E8AB143009A5A1A /* ViewController.swift in Sources */,
 				7E63B43B1E8ABCE2009A5A1A /* SSCalendarWeekViewController.m in Sources */,
 				7E63B4301E8ABCE2009A5A1A /* SSStyles.m in Sources */,
 				7E63B31C1E8AB143009A5A1A /* AppDelegate.swift in Sources */,
+				7E63B4661E8AEECB009A5A1A /* SSCalendarHybridDataSource.m in Sources */,
 				7E63B44F1E8ABCE2009A5A1A /* SSCalendarCache.m in Sources */,
 				7E63B4491E8ABCE2009A5A1A /* SSCalendarAnnualLayout.m in Sources */,
 				7E63B43E1E8ABCE2009A5A1A /* SSCalendarDailyViewController.m in Sources */,
