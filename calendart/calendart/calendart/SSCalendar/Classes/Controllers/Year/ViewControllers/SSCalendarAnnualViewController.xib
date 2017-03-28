@@ -21,7 +21,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <collectionView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" indicatorStyle="white" minimumZoomScale="0.0" maximumZoomScale="0.0" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="YTc-Qf-Uqy">
-                    <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                    <rect key="frame" x="22" y="153" width="330" height="282"/>
                     <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="0.0" minimumInteritemSpacing="9" id="DCB-39-wC9">
                         <size key="itemSize" width="94" height="100"/>
@@ -34,11 +34,12 @@
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
-                <constraint firstItem="YTc-Qf-Uqy" firstAttribute="top" secondItem="1" secondAttribute="top" id="9e4-Eo-P94"/>
-                <constraint firstItem="YTc-Qf-Uqy" firstAttribute="leading" secondItem="1" secondAttribute="leading" id="KOt-Xn-xA1"/>
-                <constraint firstAttribute="bottom" secondItem="YTc-Qf-Uqy" secondAttribute="bottom" id="S2q-Ry-4fL"/>
-                <constraint firstItem="YTc-Qf-Uqy" firstAttribute="trailing" secondItem="1" secondAttribute="trailing" id="gB0-gS-3gB"/>
+                <constraint firstItem="YTc-Qf-Uqy" firstAttribute="top" secondItem="1" secondAttribute="top" constant="153" id="9e4-Eo-P94"/>
+                <constraint firstItem="YTc-Qf-Uqy" firstAttribute="leading" secondItem="1" secondAttribute="leading" constant="22" id="KOt-Xn-xA1"/>
+                <constraint firstAttribute="bottom" secondItem="YTc-Qf-Uqy" secondAttribute="bottom" constant="232" id="S2q-Ry-4fL"/>
+                <constraint firstItem="YTc-Qf-Uqy" firstAttribute="trailing" secondItem="1" secondAttribute="trailing" constant="-23" id="gB0-gS-3gB"/>
             </constraints>
+            <point key="canvasLocation" x="24.5" y="51.5"/>
         </view>
     </objects>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">

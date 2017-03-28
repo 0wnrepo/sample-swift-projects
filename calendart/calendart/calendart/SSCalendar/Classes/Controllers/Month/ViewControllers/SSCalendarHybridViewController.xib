@@ -20,15 +20,16 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1l5-QY-NKN" customClass="SSCalendarWeekHeaderView">
-                    <rect key="frame" x="0.0" y="6" width="240" height="35"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GtG-zH-jBE">
+                    <rect key="frame" x="0.0" y="284" width="375" height="383"/>
+                    <color key="backgroundColor" red="1" green="0.39836750685018085" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                 </view>
-                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="PPb-C1-8jU" userLabel="Year View">
-                    <rect key="frame" x="0.0" y="99" width="375" height="308"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="PPb-C1-8jU" userLabel="Year View">
+                    <rect key="frame" x="0.0" y="29" width="375" height="255"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="255" id="t1N-R5-3uH"/>
+                    </constraints>
                     <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="zO2-9y-l5X">
                         <size key="itemSize" width="50" height="50"/>
                         <size key="headerReferenceSize" width="0.0" height="0.0"/>
@@ -42,6 +43,21 @@
                 </collectionView>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="GtG-zH-jBE" secondAttribute="bottom" id="0rt-KO-LfV"/>
+                <constraint firstItem="PPb-C1-8jU" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="1bZ-zB-QhD"/>
+                <constraint firstItem="PPb-C1-8jU" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="29" id="AQo-t7-8B7"/>
+                <constraint firstItem="GtG-zH-jBE" firstAttribute="top" secondItem="PPb-C1-8jU" secondAttribute="bottom" id="Bd2-wN-TUN"/>
+                <constraint firstItem="GtG-zH-jBE" firstAttribute="top" secondItem="PPb-C1-8jU" secondAttribute="bottom" id="CDz-qV-0AR"/>
+                <constraint firstItem="PPb-C1-8jU" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="EBc-Ca-IpU"/>
+                <constraint firstItem="PPb-C1-8jU" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="29" id="FvW-4D-kgY"/>
+                <constraint firstItem="GtG-zH-jBE" firstAttribute="leading" secondItem="PPb-C1-8jU" secondAttribute="leading" id="Jp3-R0-4BV"/>
+                <constraint firstItem="PPb-C1-8jU" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="OIn-WA-AO7"/>
+                <constraint firstAttribute="trailing" secondItem="PPb-C1-8jU" secondAttribute="trailing" id="R9i-UM-IY8"/>
+                <constraint firstAttribute="trailing" secondItem="PPb-C1-8jU" secondAttribute="trailing" id="ov0-5L-3Qi"/>
+                <constraint firstAttribute="trailing" secondItem="PPb-C1-8jU" secondAttribute="trailing" id="qF1-hL-P2k"/>
+                <constraint firstItem="GtG-zH-jBE" firstAttribute="trailing" secondItem="PPb-C1-8jU" secondAttribute="trailing" id="vPt-0o-PQQ"/>
+            </constraints>
             <point key="canvasLocation" x="-23.5" y="55.5"/>
         </view>
     </objects>
