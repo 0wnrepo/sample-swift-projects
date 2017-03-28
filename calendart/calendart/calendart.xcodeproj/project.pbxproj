@@ -56,7 +56,6 @@
 		7E63B4541E8ABCE2009A5A1A /* SSYearNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E63B42A1E8ABCE2009A5A1A /* SSYearNode.m */; };
 		7E63B4571E8AC0F2009A5A1A /* SCCalendarMonthlyView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7E63B4551E8AC0F2009A5A1A /* SCCalendarMonthlyView.xib */; };
 		7E63B4581E8AC0F2009A5A1A /* SCCalendarMonthlyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E63B4561E8AC0F2009A5A1A /* SCCalendarMonthlyViewController.swift */; };
-		7E63B45A1E8AD485009A5A1A /* SSCalendar.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 7E63B4591E8AD485009A5A1A /* SSCalendar.bundle */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -146,7 +145,6 @@
 		7E63B42A1E8ABCE2009A5A1A /* SSYearNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSYearNode.m; sourceTree = "<group>"; };
 		7E63B4551E8AC0F2009A5A1A /* SCCalendarMonthlyView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SCCalendarMonthlyView.xib; sourceTree = "<group>"; };
 		7E63B4561E8AC0F2009A5A1A /* SCCalendarMonthlyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SCCalendarMonthlyViewController.swift; sourceTree = "<group>"; };
-		7E63B4591E8AD485009A5A1A /* SSCalendar.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = SSCalendar.bundle; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -199,7 +197,6 @@
 		7E63B3361E8AB90D009A5A1A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				7E63B4591E8AD485009A5A1A /* SSCalendar.bundle */,
 				7E63B3391E8AB917009A5A1A /* Foundation.framework */,
 				7E63B3371E8AB90D009A5A1A /* UIKit.framework */,
 			);
@@ -518,7 +515,6 @@
 				7E63B44B1E8ABCE2009A5A1A /* SSCalendarAnnualViewController.xib in Resources */,
 				7E63B4451E8ABCE2009A5A1A /* SSCalendarMonthlyHeaderView.xib in Resources */,
 				7E63B3261E8AB143009A5A1A /* LaunchScreen.storyboard in Resources */,
-				7E63B45A1E8AD485009A5A1A /* SSCalendar.bundle in Resources */,
 				7E63B4571E8AC0F2009A5A1A /* SCCalendarMonthlyView.xib in Resources */,
 				7E63B3231E8AB143009A5A1A /* Assets.xcassets in Resources */,
 				7E63B4431E8ABCE2009A5A1A /* SSCalendarMonthlyViewController.xib in Resources */,
