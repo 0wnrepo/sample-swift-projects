@@ -11,6 +11,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SSCalendarHybridViewController">
             <connections>
+                <outlet property="subViewEvents" destination="GtG-zH-jBE" id="Lvw-Wk-HDh"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
                 <outlet property="yearView" destination="PPb-C1-8jU" id="kRp-9S-3nd"/>
             </connections>

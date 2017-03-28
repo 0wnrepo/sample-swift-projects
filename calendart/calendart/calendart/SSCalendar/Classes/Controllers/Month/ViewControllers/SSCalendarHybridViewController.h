@@ -14,6 +14,7 @@
 @interface SSCalendarHybridViewController : UIViewController <UICollectionViewDelegate>
 @property (nonatomic, copy) NSArray *years;
 @property (nonatomic, strong) NSIndexPath *startingIndexPath;
+@property (weak, nonatomic) IBOutlet UIView *subViewEvents;
 
 @property (weak, nonatomic) IBOutlet UICollectionView *yearView;
 @property (nonatomic, strong) SSCalendarHybridDataSource *dataSource;

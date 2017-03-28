@@ -37,6 +37,14 @@
     _dataSource.years = _years;
     
     [self refresh];
+    
+    
+    SSCalendarDailyViewController *viewController = [[SSCalendarDailyViewController alloc] initWithDataController:_dataController];
+    SSDayNode *dat = [[SSDayNode alloc] initWithValue:1 Month:3 Year:2017 Weekday:1];
+    viewController.day = dat;
+    [self addChildViewController:viewController];
+    viewController.view.frame = _subViewEvents.bounds;
+    [_subViewEvents addSubview:viewController.view];
 
 }
 
@@ -102,7 +110,6 @@
     viewController.day = cell.day;
     [self.navigationController pushViewController:viewController animated:YES];
 }
-
 
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView
 {
