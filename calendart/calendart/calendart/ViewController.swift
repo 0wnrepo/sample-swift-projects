@@ -13,7 +13,7 @@ class ViewController: UIViewController {
         @IBAction func buttonTapped(_ sender: AnyObject?) {
             SSStyles.applyNavigationBarStyles()
 
-            let annualViewController = SSCalendarAnnualViewController(events: generateEvents())
+            let annualViewController = SSCalendarMonthlyViewController(events: generateEvents())
             let navigationController = UINavigationController(rootViewController: annualViewController!)
             navigationController.navigationBar.isTranslucent = false
             self.present(navigationController, animated: true, completion: nil)

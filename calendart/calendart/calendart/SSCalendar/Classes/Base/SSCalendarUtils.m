@@ -13,9 +13,10 @@
 
 + (NSBundle *)calendarBundle
 {
-    NSBundle *podBundle = [NSBundle bundleForClass:SSCalendarUtils.self];
-    NSURL *bundleURL = [podBundle URLForResource:@"SSCalendar" withExtension:@"bundle"];
-    return [NSBundle bundleWithURL:bundleURL];
+//    NSBundle *podBundle = [NSBundle bundleForClass:SSCalendarUtils.self];
+//    NSURL *bundleURL = [podBundle URLForResource:@"SSCalendar" withExtension:@"bundle"];
+//    return [NSBundle bundleWithURL:bundleURL];
+    return [NSBundle mainBundle];
 }
 
 + (NSCalendar *)calendar
