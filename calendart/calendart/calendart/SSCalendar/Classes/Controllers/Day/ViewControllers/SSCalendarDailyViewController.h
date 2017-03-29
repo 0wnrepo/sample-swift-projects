@@ -34,6 +34,6 @@
 - (id)initWithDataController:(SSDataController *)dataController;
 - (IBAction)todayPressed:(id)sender;
 - (void)refresh;
-- (void)refreshDay;
+- (void)refreshEveything;
 
 @end

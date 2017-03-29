@@ -117,7 +117,8 @@
     }
 }
 
-- (void)refreshDay{
+- (void)refreshEveything {
+    [self refresh];
     [self scrollDayViewToDay];
     [self selectDayInWeekView];
     [self reloadDayLabel];

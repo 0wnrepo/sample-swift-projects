@@ -40,13 +40,22 @@
     [self refresh];
     
     
+    [self initializeDailyViewController];
+
+}
+
+- (void) initializeDailyViewController {
+    int value = 1;
+    int month = 3;
+    int year = 2017;
+    int weekday = 1;
+    
     _dailyVC = [[SSCalendarDailyViewController alloc] initWithDataController:_dataController];
-    SSDayNode *dat = [[SSDayNode alloc] initWithValue:1 Month:3 Year:2017 Weekday:1];
+    SSDayNode *dat = [[SSDayNode alloc] initWithValue:value Month:month Year:year Weekday:weekday];
     _dailyVC.day = dat;
     [self addChildViewController:_dailyVC];
     _dailyVC.view.frame = _subViewEvents.bounds;
     [_subViewEvents addSubview:_dailyVC.view];
-
 }
 
 
@@ -109,8 +118,7 @@
     
     
     _dailyVC.day = cell.day;
-    [_dailyVC refresh];
-    [_dailyVC refreshDay];
+    [_dailyVC refreshEveything];
 }
 
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView
