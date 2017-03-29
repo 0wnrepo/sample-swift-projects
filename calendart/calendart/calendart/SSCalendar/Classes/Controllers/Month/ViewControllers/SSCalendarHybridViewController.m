@@ -22,6 +22,7 @@
 
 @interface SSCalendarHybridViewController ()
 @property (nonatomic, strong) SSDataController *dataController;
+@property (nonatomic, strong) SSCalendarDailyViewController *dailyVC;
 
 @end
 
@@ -39,12 +40,12 @@
     [self refresh];
     
     
-    SSCalendarDailyViewController *viewController = [[SSCalendarDailyViewController alloc] initWithDataController:_dataController];
+    _dailyVC = [[SSCalendarDailyViewController alloc] initWithDataController:_dataController];
     SSDayNode *dat = [[SSDayNode alloc] initWithValue:1 Month:3 Year:2017 Weekday:1];
-    viewController.day = dat;
-    [self addChildViewController:viewController];
-    viewController.view.frame = _subViewEvents.bounds;
-    [_subViewEvents addSubview:viewController.view];
+    _dailyVC.day = dat;
+    [self addChildViewController:_dailyVC];
+    _dailyVC.view.frame = _subViewEvents.bounds;
+    [_subViewEvents addSubview:_dailyVC.view];
 
 }
 
@@ -106,9 +107,10 @@
     
     SSCalendarDayCell *cell = (SSCalendarDayCell *) [collectionView cellForItemAtIndexPath:indexPath];
     
-    SSCalendarDailyViewController *viewController = [[SSCalendarDailyViewController alloc] initWithDataController:_dataController];
-    viewController.day = cell.day;
-    [self.navigationController pushViewController:viewController animated:YES];
+    
+    _dailyVC.day = cell.day;
+    [_dailyVC refresh];
+    [_dailyVC refreshDay];
 }
 
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView

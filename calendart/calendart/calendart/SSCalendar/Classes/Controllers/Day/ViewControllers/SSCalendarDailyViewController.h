@@ -33,5 +33,7 @@
 - (id)initWithEvents:(NSArray *)events;
 - (id)initWithDataController:(SSDataController *)dataController;
 - (IBAction)todayPressed:(id)sender;
+- (void)refresh;
+- (void)refreshDay;
 
 @end

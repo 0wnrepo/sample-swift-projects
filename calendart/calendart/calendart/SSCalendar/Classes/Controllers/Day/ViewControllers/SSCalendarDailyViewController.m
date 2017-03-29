@@ -117,6 +117,12 @@
     }
 }
 
+- (void)refreshDay{
+    [self scrollDayViewToDay];
+    [self selectDayInWeekView];
+    [self reloadDayLabel];
+}
+
 
 #pragma mark - Setter Methods
 
